@@ -121,13 +121,14 @@ def DeleteFrom():
 
 def GetAll():
     clear()
-    print("*********31b4*********")
-    print("All stored data")
-    print(colored("at",'red')+ " / "+ colored("username",'green')+" / "+colored("password",'blue')+'\n')
     c.execute('SELECT * FROM passes ')
     if len(c.fetchall())==0:
+        print("*********31b4*********")
         print("empty database")
     else:
+        print("*********31b4*********")
+        print("All stored data")
+        print(colored("at",'red')+ " / "+ colored("username",'green')+" / "+colored("password",'blue')+'\n')
         c.execute('SELECT * FROM passes ')
         for row in c.fetchall():
             print(colored(row[0],'red')+ " "+ colored(row[1],'green')+" "+colored(row[2],'blue'))
